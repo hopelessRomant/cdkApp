@@ -1,58 +1,40 @@
+# AWS CDK Tutorial: Deploying a Simple Lambda Application
 
-# Welcome to your CDK Python project!
+## About this Tutorial
 
-This is a blank project for CDK development with Python.
+In this tutorial, you will create and deploy a simple application on AWS using the **AWS CDK**.  
+The application consists of an **AWS Lambda function** that returns a `Hello World!` message when invoked.  
+The function will be invoked through a **Lambda Function URL** that serves as a dedicated HTTP(S) endpoint for your Lambda function.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+---
 
-This project is set up like a standard Python project.  The initialization
-process also creates a virtualenv within this project, stored under the `.venv`
-directory.  To create the virtualenv it assumes that there is a `python3`
-(or `python` for Windows) executable in your path with access to the `venv`
-package. If for any reason the automatic creation of the virtualenv fails,
-you can create the virtualenv manually.
+## Tutorial Steps
 
-To manually create a virtualenv on MacOS and Linux:
+Through this tutorial, you will perform the following:
 
-```
-$ python3 -m venv .venv
-```
+1. **Create your project**  
+   Create a CDK project using the CDK CLI `cdk init` command.
 
-After the init process completes and the virtualenv is created, you can use the following
-step to activate your virtualenv.
+2. **Configure your AWS environment**  
+   Configure the AWS environment that you will deploy your application into.
 
-```
-$ source .venv/bin/activate
-```
+3. **Bootstrap your AWS environment**  
+   Prepare your AWS environment for deployment by bootstrapping it using the CDK CLI `cdk bootstrap` command.
 
-If you are a Windows platform, you would activate the virtualenv like this:
+4. **Develop your app**  
+   Use constructs from the AWS Construct Library to define your Lambda function and Lambda function URL resources.
 
-```
-% .venv\Scripts\activate.bat
-```
+5. **Prepare your app for deployment**  
+   Use the CDK CLI to build your app and synthesize an AWS CloudFormation template.
 
-Once the virtualenv is activated, you can install the required dependencies.
+6. **Deploy your app**  
+   Use the CDK CLI `cdk deploy` command to deploy your application and provision your AWS resources.
 
-```
-$ pip install -r requirements.txt
-```
+7. **Interact with your application**  
+   Interact with your deployed Lambda function on AWS by invoking it and receiving a response.
 
-At this point you can now synthesize the CloudFormation template for this code.
+8. **Modify your app**  
+   Modify your Lambda function and deploy to implement your changes.
 
-```
-$ cdk synth
-```
-
-To add additional dependencies, for example other CDK libraries, just add
-them to your `setup.py` file and rerun the `pip install -r requirements.txt`
-command.
-
-## Useful commands
-
- * `cdk ls`          list all stacks in the app
- * `cdk synth`       emits the synthesized CloudFormation template
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk docs`        open CDK documentation
-
-Enjoy!
+9. **Delete your app**  
+   Delete all resources that you created by using the CDK CLI `cdk destroy` command.
