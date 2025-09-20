@@ -7,6 +7,11 @@ from cdk_app.cdk_app_stack import CdkAppStack
 
 
 app = cdk.App()
-CdkAppStack(app, "CdkAppStack",)
+CdkAppStack(app, "CdkAppStack",
+        env = cdk.Environment(
+            account=os.getenv("ACCOUNTID"), 
+            region=os.getenv("REGION")
+        )
+)
 
 app.synth()
