@@ -12,16 +12,15 @@ class HelloCdkStack(Stack):
 
     my_function = _lambda.Function(
       self, "HelloWorldFunction",
-      runtime = _lambda.Runtime.NODEJS_20_X, 
+      runtime = _lambda.Runtime.PYTHON_3_12, 
       handler = "index.handler",
       code = _lambda.Code.from_inline(
         """
-        exports.handler = async function(event) {
-          return {
-            statusCode: 200,
-            body: JSON.stringify('Hello World!'),
-          };
-        };
+        def handler(event,context):
+            return {
+                'statusCode': 200,
+                'body': 'Hello, CDK!'
+            }
         """
       ),
     )
