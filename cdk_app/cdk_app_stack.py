@@ -16,11 +16,12 @@ class HelloCdkStack(Stack):
       handler = "index.handler",
       code = _lambda.Code.from_inline(
         """
-        def handler(event,context):
-            return {
-                'statusCode': 200,
-                'body': 'Hello, CDK!'
-            }
+    def handler(event,context):
+        return {
+            'statusCode': 200,
+            "headers": {"Content-Type": "Hope"},
+            'body': 'Hello, CDK!'
+        }
         """
       ),
     )
